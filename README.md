@@ -329,3 +329,13 @@ Publishする。
 
 ![alt text](image-5.png)
 
+## Update main
+
+mainブランチで、左下のSynchronize Changeをクリック。
+
+![alt text](image-6.png)
+
+
+## Resolve Conflict
+
+![alt text](image-7.png)
