@@ -56,7 +56,7 @@ rootdir <- sub("oml-tutorial-car/src.*", "oml-tutorial-car", getwd())
 path <- paste0(rootdir, "/build/results/template/")
 path
 # result <- readQueryResultsFromJson(paste0(path, "getAllCars.json"))
-result
+# result
 
 ```
 
