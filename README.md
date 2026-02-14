@@ -341,3 +341,29 @@ mainブランチで、左下のSynchronize Changeをクリック。
 ## Resolve Conflict
 
 ![alt text](image-7.png)
+
+## Add New Concept
+
+Create Branch "seat"
+
+Add concept to vocabulary1.oml
+
+```
+	concept Seat
+
+	relation entity IsSeatOf [
+		from Seat
+		to Car
+		forward isSeatOf
+		reverse hasSeat
+		functional
+	]
+```
+
+Run Build and Load
+```
+./gradlew build
+./gradlew load
+```
+
+Commit
