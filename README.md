@@ -296,3 +296,48 @@ WHERE {
 }ORDER BY ?odd ?oe
 ```
 
+create brunch 610 
+
+
+
+## Git Tutorial
+
+まず、GithubのCollaboratorにてinvitationを設定する必要あり。
+
+次に、gitのuser.nameとuser.emailをterminalで設定
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "Your email"
+```
+
+## Create Branch
+
+![alt text](image.png)
+
+Publishする。
+
+## Github上で確認。
+
+![alt text](image-1.png)
+
+## Merge
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+## Update main
+
+mainブランチで、左下のSynchronize Changeをクリック。
+
+![alt text](image-6.png)
+
+
+## Resolve Conflict
+
+![alt text](image-7.png)
