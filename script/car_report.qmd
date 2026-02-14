@@ -1,0 +1,96 @@
+---
+title: "Introduction to Model Query"
+date: now
+date-format: "MMM D, YYYY, HH:mm:ss"
+author: "Yuta Nakajima"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+## Initialize
+
+```{r}
+#| label: initialize
+#| warning: false
+#| message: false
+#| include: true
+#| 
+
+library(tidyr)
+library(dplyr)
+library(knitr)
+library(jsonlite)
+
+
+###############################################################################
+#' readQueryResultsFromJson
+#'
+#' @param filepath path to json file
+#'
+#' @return df convert json to data frame 
+#' 
+readQueryResultsFromJson <- function(filepath){
+  jsondata <- jsonlite::fromJSON(filepath)
+  
+  colnum <- ncol(jsondata$results$bindings)
+  df <- data.frame(matrix(rep(NA, colnum), nrow=1))[numeric(0), ]
+  colnames(df) <- c(names(jsondata$results$bindings))
+  
+  for (i in 1:nrow(jsondata$results$bindings)) {
+    for (j in 1:colnum) {
+      df[i,j] <- jsondata$results$bindings[i,j]$value
+    }
+  }
+  return(df)
+}
+```
+
+## Read Query Results
+
+```{r}
+#| label: Read-Query-Results
+getwd()
+rootdir <- sub("oml-tutorial-car/src.*", "oml-tutorial-car", getwd())
+path <- paste0(rootdir, "/build/results/template/")
+path
+result <- readQueryResultsFromJson(paste0(path, "getAllCars.json"))
+result
+```
+
+## Visualize as Table
+
+```{r}
+df <- result %>%
+  select(iri, displacement)
+
+knitr::kable(df)
+```
+
+### Visualize as Graph
+
+```{r}
+# library(visNetwork)
+
+# visdf <- df %>% filter(!is.na(iri))
+
+# visnodes <- data.frame(
+#   id = c(visdf$iri),
+#   label = c(visdf$iri),
+#   title = c(visdf$iri)
+# )%>% distinct(id, .keep_all = TRUE) %>%
+#   filter(!is.na(id)) 
+
+# visedges <- data.frame(
+#   from = c(visdf$mid),
+#   to = c(visdf$id)
+# )%>% filter(!is.na(from)) %>%
+#   filter(!is.na(to)) %>%
+#   mutate(arrows = c("to")) 
+
+
+  
+# visNetwork(nodes = visnodes, edges = visedges) 
+
+```
