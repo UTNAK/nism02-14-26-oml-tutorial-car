@@ -87,6 +87,18 @@ description <http://opencaesar.io/template/description/description1#> as descrip
 		vim4:hasDoubleNumber "2000"^^xsd:double
 	]
 
+	instance displacement-Alice : vocabulary1:Displacement [
+		vim4:hasDoubleNumber "2500"^^xsd:double
+	]
+
+	instance alice-SR14-v1 : vocabulary1:SR14 [
+		vocabulary1:hasDisplacement displacement-Alice
+	]
+
+	instance alice-CX-8-v1 : vocabulary1:CX-8 [
+		vocabulary1:hasEngine alice-SR14-v1
+	]
+
 	instance displacement-kevins-v1 : vocabulary1:Displacement [
 		vim4:hasDoubleNumber "2000"^^xsd:double
 	]
