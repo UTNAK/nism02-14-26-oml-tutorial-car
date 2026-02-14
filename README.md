@@ -367,3 +367,28 @@ Run Build and Load
 ```
 
 Commit
+
+Add seat and mirror
+
+```SPARQL
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX base:        <http://imce.jpl.nasa.gov/foundation/base#>
+PREFIX vocabulary1:        <http://opencaesar.io/template/vocabulary/vocabulary1#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX vim4: <http://bipm.org/jcgm/vim4#>
+
+SELECT DISTINCT*
+WHERE {
+  ?iri a vocabulary1:Car;
+  OPTIONAL{
+    ?iri vocabulary1:hasSideMirror ?sidemirror
+  }
+  OPTIONAL{
+    ?iri vocabulary1:hasEngine ?engine
+  }
+  OPTIONAL{
+    ?iri vocabulary1:hasSeat ?seat
+  }
+}ORDER BY ?iri
+```
+
