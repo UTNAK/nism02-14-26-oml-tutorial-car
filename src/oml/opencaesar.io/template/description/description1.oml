@@ -99,4 +99,14 @@ description <http://opencaesar.io/template/description/description1#> as descrip
 
 	
 
+
+	instance pauls-CX-8 : vocabulary1:CX-8 [
+		vocabulary1:hasEngine  pauls-SR14-v1
+	]
+	instance pauls-SR14-v1 : vocabulary1:SR14[
+		vocabulary1:hasDisplacement displacement-pauls-v1
+	]
+	instance displacement-pauls-v1 : vocabulary1:Displacement [
+		vim4:hasDoubleNumber "2000"^^xsd:double
+	]
 }

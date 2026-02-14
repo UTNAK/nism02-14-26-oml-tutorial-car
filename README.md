@@ -295,3 +295,37 @@ WHERE {
 
 }ORDER BY ?odd ?oe
 ```
+
+
+
+## Git Tutorial
+
+まず、GithubのCollaboratorにてinvitationを設定する必要あり。
+
+次に、gitのuser.nameとuser.emailをterminalで設定
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "Your email"
+```
+
+## Create Branch
+
+![alt text](image.png)
+
+Publishする。
+
+## Github上で確認。
+
+![alt text](image-1.png)
+
+## Merge
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
