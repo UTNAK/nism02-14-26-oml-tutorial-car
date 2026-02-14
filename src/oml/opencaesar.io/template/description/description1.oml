@@ -139,4 +139,5 @@ description <http://opencaesar.io/template/description/description1#> as descrip
 	]
 	instance pauls-seat : vocabulary1:Seat
 	instance pauls-sidemirror : vocabulary1:SideMirror
+	
 }
